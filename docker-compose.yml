@@ -25,7 +25,7 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=mysql_12345
-      - MYSQL_DATABASE=app
+      - MYSQL_DATABASE=app_db
     volumes:
       - ./stack/mysql/data:/var/lib/mysql:rw
       - ./stack/mysql/entrypoint:/docker-entrypoint-initdb.d
