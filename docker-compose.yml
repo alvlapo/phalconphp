@@ -8,10 +8,10 @@ services:
     ports:
       - 8888:80
     links:
-      -  vokuro:php
+      -  app:php
 
-  vokuro:
-    image: phalconphp/php-fpm:7
+  app:
+    image: phalconphp/php-fpm:7-min
     volumes:
       - ./src:/var/www/html
     ports:
@@ -25,7 +25,7 @@ services:
     image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=mysql_12345
-      - MYSQL_DATABASE=vokuro
+      - MYSQL_DATABASE=app
     volumes:
       - ./stack/mysql/data:/var/lib/mysql:rw
       - ./stack/mysql/entrypoint:/docker-entrypoint-initdb.d
